@@ -1,5 +1,8 @@
 # a^2 + b^2 = c^2
+# Check if the value entered is a b or c
 import math
+# create Tuple
+values = ('a','b','c')
 print('------------------------------------')
 print('Pythagoras Theorem')
 print('a^2 + b^2 = c^2')
@@ -13,14 +16,19 @@ print(' |__|__*')
 print('     b')
 print('------------------------------------')
 missing = input('Which side is unknown? (a,b,c):')
+valid = missing in values
+while valid == 0: #false
+    print('** ERROR ** \nPlease choose a,b or c ONLY')
+    missing = input('Which side is unknown? (a,b,c):')
+    valid = missing in values
 
 if missing == 'a':
     # a is unknown
     b = int(input('Enter Side b:'))
     c = int(input('Enter Side c:'))
 
-    while c < b:
-        print('** ERROR ** c is less than b')
+    while c <= b:
+        print('** ERROR ** \nc is less or equal to b')
         c = int(input('Enter Side c:'))
 
     a2 = (c ** 2) - (b ** 2)
@@ -31,8 +39,8 @@ elif missing == 'b':
     a = int(input('Enter Side a:'))
     c = int(input('Enter Side c:'))
 
-    while c < a:
-        print('** ERROR ** c is less than a')
+    while c <= a:
+        print('** ERROR ** \nc is less or equal to a')
         c = int(input('Enter Side c:'))
 
     b2 = (c**2)-(a**2)
