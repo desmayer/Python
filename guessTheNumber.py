@@ -8,8 +8,6 @@ Guess The Number
 - Confirm if number is higher or lower
 - Count the number of attempts required
 '''
-
-
 from random import random, sample
 # Start Count
 count = 0
